@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Châu &amp; Loan — Kế hoạch lễ cưới</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #f5efe2;
+    --ivory-2: #ebe3d2;
+    --paper: #faf6ed;
+    --navy: #1e2a4a;
+    --navy-2: #2c3e5c;
+    --navy-deep: #131a2e;
+    --gold: #b8985c;
+    --gold-soft: #d4b97a;
+    --ink: #131a2e;
+    --ink-2: #4a4f5e;
+    --ink-3: #6b7080;
+    --line: rgba(30, 42, 74, 0.16);
+    --line-soft: rgba(30, 42, 74, 0.1);
+    --serif: "DM Serif Display", "Times New Roman", serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15.5px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+  ::selection { background: var(--navy); color: var(--paper); }
+
+  a { color: inherit; }
+
+  /* ===================== Top Bar ===================== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .topbar-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 18px 40px;
+    gap: 24px;
+  }
+  .topbar-mono {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+  .topbar-mono em { font-style: italic; color: var(--gold); margin: 0 4px; }
+  .topbar-nav {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--ink-2);
+  }
+  .topbar-nav a {
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .topbar-nav a span {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 13px;
+  }
+  .topbar-nav a:hover { color: var(--navy); }
+  .topbar-right {
+    text-align: right;
+    font-size: 12.5px;
+    color: var(--ink-3);
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+  }
+  .topbar-right a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+  }
+
+  /* ===================== Hero ===================== */
+  .hero {
+    padding: 80px 40px 60px;
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--paper);
+  }
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero-top {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 32px;
+    font-size: 12px;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .hero-top-rule {
+    height: 1px;
+    background: var(--line);
+  }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(72px, 12vw, 184px);
+    line-height: 0.92;
+    color: var(--navy);
+    letter-spacing: -0.025em;
+    font-weight: 400;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-headline-1 { display: block; }
+  .hero-headline-2 { display: block; padding-left: 6vw; }
+
+  .hero-foot {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+    align-items: end;
+  }
+  .hero-foot-lead {
+    font-size: 18px;
+    color: var(--ink-2);
+    line-height: 1.55;
+    max-width: 480px;
+  }
+  .hero-foot-lead strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .hero-foot-block-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+  }
+  .hero-foot-block-val {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .hero-foot-block-val em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-foot-block-sub {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-top: 4px;
+  }
+
+  /* ===================== Section structure ===================== */
+  .sec {
+    padding: 100px 40px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .sec-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .sec-head {
+    display: grid;
+    grid-template-columns: 100px 1fr 280px;
+    align-items: end;
+    gap: 32px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 60px;
+  }
+  .sec-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 60px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .sec-title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 5.5vw, 76px);
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+  .sec-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .sec-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .sec-lede {
+    font-size: 14.5px;
+    color: var(--ink-2);
+    line-height: 1.6;
+    text-align: right;
+    max-width: 280px;
+    margin-left: auto;
+  }
+
+  /* ===================== Intro / Couple ===================== */
+  .intro { background: var(--paper); }
+  .couple-grid {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0;
+    align-items: stretch;
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .couple-cell {
+    padding: 48px 44px;
+  }
+  .couple-cell.left { border-right: 0; }
+  .couple-amp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 56px;
+    color: var(--gold);
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    background: var(--ivory);
+  }
+  .couple-role {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--ink-3);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .couple-role::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .couple-name {
+    font-family: var(--serif);
+    font-size: 44px;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .couple-meta-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    padding: 10px 0;
+    border-top: 1px solid var(--line-soft);
+    font-size: 13.5px;
+    align-items: baseline;
+  }
+  .couple-meta-row:last-child { border-bottom: 1px solid var(--line-soft); }
+  .couple-meta-row dt {
+    color: var(--ink-3);
+    text-transform: uppercase;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+  }
+  .couple-meta-row dd {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    font-style: italic;
+  }
+  .couple-cell.right { border-left: 0; }
+
+  .intro-paras {
+    margin-top: 52px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .intro-para {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .intro-para strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .intro-para em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 19px;
+  }
+
+  /* ===================== Timeline ===================== */
+  .timeline { background: var(--ivory); }
+  .timeline .sec-head { border-bottom-color: var(--line); }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--navy);
+  }
+  .timeline-row {
+    display: contents;
+  }
+  .tl-when, .tl-body, .tl-title {
+    border-bottom: 1px solid var(--line);
+    padding: 32px 24px;
+  }
+  .tl-when {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-3);
+    border-right: 1px solid var(--line);
+    background: var(--paper);
+    line-height: 1.5;
+    padding: 32px 28px 32px 32px;
+  }
+  .tl-when-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .tl-title {
+    border-right: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .tl-title-h {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .tl-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .tl-tag {
+    font-size: 11px;
+    color: var(--navy);
+    border: 1px solid var(--line);
+    padding: 3px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+  .tl-body {
+    background: var(--paper);
+    color: var(--ink-2);
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .timeline-row.is-priority .tl-when,
+  .timeline-row.is-priority .tl-title,
+  .timeline-row.is-priority .tl-body {
+    background: var(--navy);
+    color: rgba(245, 239, 226, 0.85);
+  }
+  .timeline-row.is-priority .tl-title-h { color: var(--paper); }
+  .timeline-row.is-priority .tl-when-num { color: var(--gold-soft); }
+  .timeline-row.is-priority .tl-when { color: rgba(245, 239, 226, 0.55); }
+  .timeline-row.is-priority .tl-tag {
+    color: var(--gold-soft);
+    border-color: rgba(245, 239, 226, 0.3);
+  }
+
+  /* ===================== Catholic ===================== */
+  .catholic { background: var(--paper); }
+  .catholic-banner {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 44px 48px;
+    margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 40px;
+  }
+  .catholic-banner-cross {
+    width: 32px;
+    height: 32px;
+    color: var(--gold-soft);
+    stroke-width: 1.4;
+  }
+  .catholic-banner-text {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    font-style: italic;
+  }
+  .catholic-banner-text em {
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+  .catholic-banner-tag {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: rgba(245, 239, 226, 0.6);
+    text-align: right;
+    line-height: 1.6;
+  }
+  .catholic-banner-tag strong {
+    display: block;
+    color: var(--gold-soft);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    margin-top: 4px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .catholic-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-left: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+  }
+  .cstep {
+    padding: 36px 32px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    position: relative;
+  }
+  .cstep-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .cstep-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .cstep-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--navy);
+    stroke-width: 1.3;
+  }
+  .cstep-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .cstep-body {
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .cstep-list {
+    list-style: none;
+    border-top: 1px solid var(--line-soft);
+    padding-top: 14px;
+  }
+  .cstep-list li {
+    font-size: 13px;
+    color: var(--ink-2);
+    padding: 5px 0;
+    display: flex;
+    gap: 8px;
+    line-height: 1.55;
+  }
+  .cstep-list li::before {
+    content: "·";
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .catholic-side-note {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    border: 1px solid var(--navy);
+    background: var(--ivory);
+  }
+  .csn-key {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 36px 40px;
+  }
+  .csn-key-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--gold-soft);
+    margin-bottom: 14px;
+  }
+  .csn-key-title {
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .csn-key-sub {
+    font-size: 14.5px;
+    color: rgba(245, 239, 226, 0.75);
+    line-height: 1.6;
+  }
+  .csn-val {
+    padding: 36px 40px;
+  }
+  .csn-val-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+  }
+  .csn-val-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .csn-val-title em { color: var(--gold); font-style: italic; }
+  .csn-val-text {
+    font-size: 13.5px;
+    color: var(--ink-2);
+    line-height: 1.65;
+  }
+
+  /* ===================== Locations ===================== */
+  .locations { background: var(--ivory); }
+  .loc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+  }
+  .loc-cell {
+    background: var(--paper);
+    padding: 56px 48px;
+    position: relative;
+  }
+  .loc-cell + .loc-cell { border-left: 1px solid var(--line); }
+  .loc-cell-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+  .loc-cell-tag {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .loc-cell-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--navy);
+    stroke-width: 1.3;
+  }
+  .loc-cell-name {
+    font-family: var(--serif);
+    font-size: 56px;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .loc-cell-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+  .loc-cell-addr {
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.5;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 24px;
+  }
+  .loc-cell-addr strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+  .loc-cell-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .loc-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-3);
+    margin-bottom: 4px;
+  }
+  .loc-stat-val {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy);
+  }
+
+  .loc-rule-note {
+    margin-top: 32px;
+    padding: 20px 28px;
+    background: var(--navy);
+    color: rgba(245, 239, 226, 0.85);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    text-align: center;
+  }
+  .loc-rule-note strong { color: var(--gold-soft); font-weight: 500; }
+
+  /* ===================== Budget ===================== */
+  .budget { background: var(--paper); }
+
+  .budget-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+    margin-bottom: 56px;
+  }
+  .budget-hero-cell { padding: 36px 36px; }
+  .budget-hero-cell + .budget-hero-cell { border-left: 1px solid var(--line); }
+  .budget-hero-cell.is-main {
+    background: var(--navy);
+    color: var(--paper);
+  }
+  .bh-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+  }
+  .is-main .bh-label { color: rgba(245, 239, 226, 0.6); }
+  .bh-val {
+    font-family: var(--serif);
+    font-size: 56px;
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .is-main .bh-val { color: var(--paper); }
+  .bh-val sup {
+    font-size: 22px;
+    color: var(--gold);
+    font-style: italic;
+    margin-left: 4px;
+    vertical-align: top;
+    margin-top: 4px;
+    display: inline-block;
+  }
+  .is-main .bh-val sup { color: var(--gold-soft); }
+  .bh-sub {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-top: 8px;
+  }
+  .is-main .bh-sub { color: rgba(245, 239, 226, 0.65); }
+
+  .budget-table {
+    border-top: 2px solid var(--navy);
+    border-bottom: 2px solid var(--navy);
+  }
+  .b-head {
+    display: grid;
+    grid-template-columns: 50px 1fr 130px 220px 110px;
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--ink-3);
+  }
+  .b-head .num { text-align: left; }
+  .b-head .range { text-align: right; }
+  .b-head .pct { text-align: right; }
+
+  .b-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 130px 220px 110px;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line-soft);
+    gap: 24px;
+    transition: background 0.2s;
+  }
+  .b-row:hover { background: var(--ivory); }
+  .b-row:last-child { border-bottom: 0; }
+  .b-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--gold);
+  }
+  .b-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .b-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    flex-shrink: 0;
+  }
+  .b-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.4;
+  }
+  .b-name {
+    font-family: var(--serif);
+    font-size: 21px;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .b-sub {
+    display: block;
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink-3);
+    margin-top: 3px;
+    letter-spacing: 0;
+  }
+  .b-range {
+    text-align: right;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-2);
+  }
+  .b-bar {
+    height: 6px;
+    background: var(--ivory-2);
+    position: relative;
+  }
+  .b-bar-fill {
+    height: 100%;
+    background: var(--navy);
+    position: relative;
+  }
+  .b-bar-fill::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -3px;
+    bottom: -3px;
+    width: 2px;
+    background: var(--gold);
+  }
+  .b-pct {
+    text-align: right;
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--navy);
+  }
+  .b-pct sup {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-left: 2px;
+    font-family: var(--sans);
+    font-weight: 400;
+  }
+
+  .budget-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 56px;
+    border: 1px solid var(--line);
+  }
+  .bs-cell {
+    padding: 28px 32px;
+    border-right: 1px solid var(--line);
+  }
+  .bs-cell:last-child { border-right: 0; }
+  .bs-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--ink-3);
+    margin-bottom: 10px;
+  }
+  .bs-val {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .bs-val em { font-style: italic; color: var(--gold); font-size: 20px; margin-left: 3px; }
+  .bs-pct {
+    font-size: 12px;
+    color: var(--ink-3);
+    margin-top: 8px;
+  }
+
+  /* ===================== Checklist ===================== */
+  .checklist { background: var(--ivory); }
+
+  .cl-progress {
+    display: grid;
+    grid-template-columns: 1fr 280px 200px;
+    gap: 32px;
+    padding: 28px 36px;
+    background: var(--navy);
+    color: var(--paper);
+    margin-bottom: 32px;
+    align-items: center;
+  }
+  .cl-prog-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: rgba(245, 239, 226, 0.6);
+  }
+  .cl-prog-label-strong {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--gold-soft);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 4px;
+    display: block;
+  }
+  .cl-prog-bar {
+    height: 4px;
+    background: rgba(245, 239, 226, 0.15);
+    position: relative;
+  }
+  .cl-prog-fill {
+    height: 100%;
+    background: var(--gold-soft);
+    width: 0%;
+    transition: width 0.4s cubic-bezier(.2,.7,.3,1);
+  }
+  .cl-prog-count {
+    text-align: right;
+  }
+  .cl-prog-count-num {
+    font-family: var(--serif);
+    font-size: 48px;
+    line-height: 1;
+    color: var(--paper);
+  }
+  .cl-prog-count-num em {
+    font-style: italic;
+    color: var(--gold-soft);
+  }
+  .cl-prog-count-of {
+    font-size: 12px;
+    color: rgba(245, 239, 226, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    margin-top: 4px;
+  }
+
+  .cl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .cl-group {
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+  .cl-group-head {
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    gap: 16px;
+    align-items: center;
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--line);
+    background: var(--ivory);
+  }
+  .cl-group-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    stroke-width: 1.5;
+  }
+  .cl-group-icon svg { width: 18px; height: 18px; }
+  .cl-group-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+  .cl-group-title small {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--ink-3);
+    margin-top: 4px;
+  }
+  .cl-group-count {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--gold);
+  }
+  .cl-items { list-style: none; }
+  .cl-item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--line-soft);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .cl-item:last-child { border-bottom: 0; }
+  .cl-item:hover { background: var(--ivory); }
+  .cl-check {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--navy);
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    transition: all 0.2s;
+  }
+  .cl-check svg {
+    width: 14px;
+    height: 14px;
+    color: var(--paper);
+    opacity: 0;
+    stroke-width: 3;
+  }
+  .cl-item.is-checked .cl-check { background: var(--navy); }
+  .cl-item.is-checked .cl-check svg { opacity: 1; }
+  .cl-text {
+    font-size: 14.5px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .cl-item.is-checked .cl-text {
+    color: var(--ink-3);
+    text-decoration: line-through;
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 1px;
+  }
+
+  /* ===================== Footer ===================== */
+  footer {
+    background: var(--navy-deep);
+    color: var(--paper);
+    padding: 96px 40px 48px;
+  }
+  .foot-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .foot-mark {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .foot-cross {
+    width: 24px;
+    height: 24px;
+    color: var(--gold-soft);
+    margin: 0 auto 28px;
+  }
+  .foot-names {
+    font-family: var(--serif);
+    font-size: clamp(64px, 10vw, 144px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+  }
+  .foot-names em {
+    font-style: italic;
+    color: var(--gold-soft);
+  }
+  .foot-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: rgba(245, 239, 226, 0.75);
+    text-align: center;
+    max-width: 540px;
+    margin: 32px auto 0;
+    line-height: 1.6;
+  }
+  .foot-meta {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(245, 239, 226, 0.15);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: rgba(245, 239, 226, 0.5);
+    align-items: center;
+  }
+  .foot-meta-mid { text-align: center; }
+  .foot-meta-end { text-align: right; }
+  .foot-meta a { color: var(--gold-soft); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+
+  /* ===================== Responsive ===================== */
+  @media (max-width: 960px) {
+    .sec { padding: 64px 24px; }
+    .topbar-inner { grid-template-columns: 1fr 1fr; gap: 12px; padding: 14px 20px; }
+    .topbar-nav { display: none; }
+    .hero { padding: 56px 24px 40px; }
+    .hero-headline-2 { padding-left: 0; }
+    .hero-foot { grid-template-columns: 1fr; gap: 24px; }
+    .sec-head { grid-template-columns: 1fr; gap: 16px; }
+    .sec-num { font-size: 36px; }
+    .sec-lede { text-align: left; max-width: none; margin-left: 0; }
+    .couple-grid { grid-template-columns: 1fr; }
+    .couple-amp { border-left: 0; border-right: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 20px; font-size: 36px; }
+    .couple-cell.left, .couple-cell.right { border: 0; }
+    .intro-paras { grid-template-columns: 1fr; gap: 24px; }
+    .timeline-grid { grid-template-columns: 1fr; }
+    .tl-when, .tl-title { border-right: 0; }
+    .catholic-banner { grid-template-columns: 1fr; gap: 20px; padding: 28px; }
+    .catholic-banner-tag { text-align: left; }
+    .catholic-steps { grid-template-columns: 1fr; }
+    .catholic-side-note { grid-template-columns: 1fr; }
+    .loc-grid { grid-template-columns: 1fr; }
+    .loc-cell + .loc-cell { border-left: 0; border-top: 1px solid var(--line); }
+    .loc-cell-name { font-size: 40px; }
+    .loc-cell-stats { grid-template-columns: 1fr 1fr; }
+    .budget-hero { grid-template-columns: 1fr; }
+    .budget-hero-cell + .budget-hero-cell { border-left: 0; border-top: 1px solid var(--line); }
+    .b-head { display: none; }
+    .b-row {
+      grid-template-columns: 36px 1fr 80px;
+      grid-template-areas: "n name name" ". range pct" ". bar bar";
+      row-gap: 8px;
+    }
+    .b-num { grid-area: n; }
+    .b-name-wrap { grid-area: name; }
+    .b-range { grid-area: range; text-align: left; }
+    .b-bar { grid-area: bar; }
+    .b-pct { grid-area: pct; font-size: 20px; }
+    .budget-summary { grid-template-columns: 1fr 1fr; }
+    .bs-cell:nth-child(2) { border-right: 0; }
+    .bs-cell:nth-child(1), .bs-cell:nth-child(2) { border-bottom: 1px solid var(--line); }
+    .cl-grid { grid-template-columns: 1fr; }
+    .cl-progress { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+    .cl-prog-count { text-align: left; }
+    .foot-meta { grid-template-columns: 1fr; }
+    .foot-meta-end { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== Top Bar ===================== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-mono">Châu <em>&amp;</em> Loan</div>
+    <nav class="topbar-nav">
+      <a href="#timeline"><span>01</span> Timeline</a>
+      <a href="#cong-giao"><span>02</span> Công giáo</a>
+      <a href="#dia-diem"><span>03</span> Địa điểm</a>
+      <a href="#ngan-sach"><span>04</span> Ngân sách</a>
+      <a href="#checklist"><span>05</span> Checklist</a>
+    </nav>
+    <div class="topbar-right">
+      <span>Đồng Nai</span>
+      <a href="index.html">Phương án khác</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== Hero ===================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <span>Phương án B · Hiện đại</span>
+      <div class="hero-top-rule"></div>
+      <span>Đồng Nai · Việt Nam</span>
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="hero-headline-1">Châu Nguyễn</span>
+      <span class="hero-headline-2"><em>&amp;</em> Nhâm Thị Loan</span>
+    </h1>
+
+    <div class="hero-foot">
+      <div class="hero-foot-lead">
+        Kế hoạch một hôn lễ <strong>Công giáo theo nghi thức chuẩn hôn khác đạo</strong>, tinh giản và trọn vẹn — tổ chức tại quê nhà ở Đồng Nai.
+      </div>
+      <div>
+        <div class="hero-foot-block-label">Hình thức</div>
+        <div class="hero-foot-block-val">Chuẩn hôn <em>khác đạo</em></div>
+        <div class="hero-foot-block-sub">Disparity of Cult</div>
+      </div>
+      <div>
+        <div class="hero-foot-block-label">Ngân sách</div>
+        <div class="hero-foot-block-val">300<em>tr</em></div>
+        <div class="hero-foot-block-sub">~280 — 300 triệu đồng</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Intro / Couple ===================== -->
+<section class="sec intro" id="intro">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-num"><em>00</em></div>
+      <div>
+        <span class="sec-eyebrow">Lời mở</span>
+        <h2 class="sec-title">Cô dâu <em>&amp;</em> Chú rể</h2>
+      </div>
+      <div class="sec-lede">Hôn lễ giữa hai gia đình, tổ chức tại Đồng Nai — không tổ chức tại TP.HCM để giữ không khí ấm cúng.</div>
+    </div>
+
+    <div class="couple-grid">
+      <div class="couple-cell left">
+        <div class="couple-role">Chú rể</div>
+        <div class="couple-name">Châu Nguyễn</div>
+        <dl>
+          <div class="couple-meta-row">
+            <dt>Quê quán</dt><dd>102, Quốc Lộ 20</dd>
+          </div>
+          <div class="couple-meta-row">
+            <dt>Tỉnh</dt><dd>Đồng Nai</dd>
+          </div>
+          <div class="couple-meta-row">
+            <dt>Tôn giáo</dt><dd>Công giáo</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="couple-amp">&amp;</div>
+      <div class="couple-cell right">
+        <div class="couple-role">Cô dâu</div>
+        <div class="couple-name">Nhâm Thị Loan</div>
+        <dl>
+          <div class="couple-meta-row">
+            <dt>Quê quán</dt><dd>Biên Hòa</dd>
+          </div>
+          <div class="couple-meta-row">
+            <dt>Tỉnh</dt><dd>Đồng Nai</dd>
+          </div>
+          <div class="couple-meta-row">
+            <dt>Tôn giáo</dt><dd>Chưa theo đạo</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="intro-paras">
+      <p class="intro-para">
+        Vì <strong>chú rể là người Công giáo</strong> còn <strong>cô dâu chưa theo đạo</strong>, hôn lễ sẽ được cử hành theo <em>nghi thức chuẩn hôn khác đạo</em> — một thủ tục được Giáo hội cho phép, cần chuẩn bị từ sớm.
+      </p>
+      <p class="intro-para">
+        Tinh thần chung của kế hoạch: giữ những gì <strong>ý nghĩa nhất</strong> — lễ tại nhà thờ, tiệc thân mật với gia đình hai bên — và lược bớt mọi nghi thức rườm rà, tốn kém.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Timeline ===================== -->
+<section class="sec timeline" id="timeline">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-num"><em>01</em></div>
+      <div>
+        <span class="sec-eyebrow">2 — 3 tháng trước cưới</span>
+        <h2 class="sec-title">Timeline <em>chuẩn bị</em></h2>
+      </div>
+      <div class="sec-lede">Sáu giai đoạn theo thứ tự ưu tiên. Phần Công giáo cần khởi động sớm nhất vì chờ giáo phận duyệt mất vài tuần.</div>
+    </div>
+
+    <div class="timeline-grid">
+
+      <div class="timeline-row is-priority">
+        <div class="tl-when"><span class="tl-when-num">I</span>Tháng −3<br><small>Ngay khi quyết định</small></div>
+        <div class="tl-title">
+          <h3 class="tl-title-h">Việc cốt lõi đầu tiên</h3>
+          <div class="tl-tags">
+            <span class="tl-tag">Chọn ngày</span>
+            <span class="tl-tag">Đăng ký kết hôn</span>
+            <span class="tl-tag">Danh sách khách</span>
+          </div>
+        </div>
+        <div class="tl-body">Chọn ngày cưới, thống nhất số lượng khách (~50–200), và đăng ký kết hôn tại UBND. Nền tảng để mọi việc sau đó đặt được.</div>
+      </div>
+
+      <div class="timeline-row is-priority">
+        <div class="tl-when"><span class="tl-when-num">II</span>Tháng −3 → −2<br><small>Sớm nhất có thể</small></div>
+        <div class="tl-title">
+          <h3 class="tl-title-h">Khởi động Công giáo</h3>
+          <div class="tl-tags">
+            <span class="tl-tag">Cha xứ</span>
+            <span class="tl-tag">Hồ sơ</span>
+            <span class="tl-tag">Giáo lý</span>
+          </div>
+        </div>
+        <div class="tl-body">Liên hệ cha xứ chú rể để xin chuẩn hôn khác đạo. Bắt đầu thu hồ sơ, ký cam kết, đăng ký lớp giáo lý. Việc lâu nhất nên cần làm trước.</div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="tl-when"><span class="tl-when-num">III</span>Tháng −2<br><small>Đặt sớm để có giá tốt</small></div>
+        <div class="tl-title">
+          <h3 class="tl-title-h">Đặt dịch vụ cốt lõi</h3>
+          <div class="tl-tags">
+            <span class="tl-tag">Nhà hàng</span>
+            <span class="tl-tag">Album</span>
+            <span class="tl-tag">Combo trang phục</span>
+          </div>
+        </div>
+        <div class="tl-body">Đặt nhà hàng tại Đồng Nai, chụp 1 album đơn giản, thuê combo trọn gói: váy + vest + makeup. Bỏ qua quay MV, concept phức tạp, ekip đông.</div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="tl-when"><span class="tl-when-num">IV</span>Tháng −1<br><small>Có thể gộp ngày cưới</small></div>
+        <div class="tl-title">
+          <h3 class="tl-title-h">Lễ ăn hỏi tinh giản</h3>
+          <div class="tl-tags">
+            <span class="tl-tag">3–5 mâm quả</span>
+            <span class="tl-tag">1–2 giờ</span>
+          </div>
+        </div>
+        <div class="tl-body">3–5 mâm quả đơn giản, làm nhanh trong 1–2 giờ. Hoặc gộp luôn vào ngày cưới để tiết kiệm. Không cần dạm ngõ riêng.</div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="tl-when"><span class="tl-when-num">V</span>Tuần −2<br><small>Hoàn tất chi tiết</small></div>
+        <div class="tl-title">
+          <h3 class="tl-title-h">Hoàn tất chi tiết</h3>
+          <div class="tl-tags">
+            <span class="tl-tag">Thiệp</span>
+            <span class="tl-tag">Nhẫn</span>
+            <span class="tl-tag">Trang trí</span>
+            <span class="tl-tag">Xe hoa</span>
+          </div>
+        </div>
+        <div class="tl-body">In thiệp (hoặc gửi online), đặt xe hoa, mua nhẫn cưới, chốt trang trí backdrop. Xác nhận lại nhà thờ, ca đoàn (nếu có).</div>
+      </div>
+
+      <div class="timeline-row is-priority">
+        <div class="tl-when"><span class="tl-when-num">VI</span>Ngày cưới<br><small>Sáng lễ · Tối tiệc</small></div>
+        <div class="tl-title">
+          <h3 class="tl-title-h">Buổi lễ &amp; tiệc</h3>
+          <div class="tl-tags">
+            <span class="tl-tag">Lễ nhà thờ</span>
+            <span class="tl-tag">Tiệc Đồng Nai</span>
+          </div>
+        </div>
+        <div class="tl-body"><strong>Sáng:</strong> Nghi thức Hôn phối tại nhà thờ (~30–45 phút). <strong>Trưa hoặc tối:</strong> Tiệc cưới Đồng Nai — đón khách, MC, cắt bánh, rót rượu, cảm ơn 1–2 phút.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Catholic ===================== -->
+<section class="sec catholic" id="cong-giao">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-num"><em>02</em></div>
+      <div>
+        <span class="sec-eyebrow">Disparity of Cult · Khác đạo</span>
+        <h2 class="sec-title">Thủ tục <em>Công giáo</em></h2>
+      </div>
+      <div class="sec-lede">Sáu bước cần hoàn tất trước cưới 1–2 tháng. Khởi động càng sớm càng tốt vì giáo phận cần thời gian duyệt.</div>
+    </div>
+
+    <div class="catholic-banner">
+      <svg class="catholic-banner-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20M5 8h14"/></svg>
+      <div class="catholic-banner-text">
+        Bên Công giáo cam kết <em>giữ đức tin</em> và hứa <em>giáo dục con theo đạo Công giáo</em> — đây là điều kiện cốt lõi để xin chuẩn hôn.
+      </div>
+      <div class="catholic-banner-tag">
+        Cam kết<strong>bắt buộc</strong>
+      </div>
+    </div>
+
+    <div class="catholic-steps">
+
+      <div class="cstep">
+        <div class="cstep-head">
+          <div class="cstep-num">01</div>
+          <svg class="cstep-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 4h11l3 3v13H5z"/><path d="M16 4v3h3"/><path d="M8 11h8M8 14h8M8 17h5"/></svg>
+        </div>
+        <h3 class="cstep-title">Chuẩn bị hồ sơ</h3>
+        <div class="cstep-body">Tập hợp đầy đủ giấy tờ trước khi gặp cha xứ.</div>
+        <ul class="cstep-list">
+          <li>Giấy chứng nhận Rửa tội (chú rể)</li>
+          <li>Giấy chứng nhận Thêm sức (nếu có)</li>
+          <li>Giấy xác nhận độc thân — cả hai</li>
+          <li>CMND / CCCD</li>
+          <li>Giấy đăng ký kết hôn</li>
+        </ul>
+      </div>
+
+      <div class="cstep">
+        <div class="cstep-head">
+          <div class="cstep-num">02</div>
+          <svg class="cstep-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+        </div>
+        <h3 class="cstep-title">Liên hệ cha xứ</h3>
+        <div class="cstep-body">Gặp cha xứ tại giáo xứ chú rể tại Đồng Nai để trình bày hoàn cảnh và nhận hướng dẫn cụ thể.</div>
+        <ul class="cstep-list">
+          <li>Giáo xứ chú rể tại Đồng Nai</li>
+          <li>Hẹn buổi gặp ban đầu</li>
+          <li>Nhận danh sách giấy tờ chính thức</li>
+        </ul>
+      </div>
+
+      <div class="cstep">
+        <div class="cstep-head">
+          <div class="cstep-num">03</div>
+          <svg class="cstep-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L20 6"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg>
+        </div>
+        <h3 class="cstep-title">Ký cam kết</h3>
+        <div class="cstep-body">Cả hai cùng ký bản cam kết do giáo phận cung cấp.</div>
+        <ul class="cstep-list">
+          <li>Bên Công giáo giữ đức tin</li>
+          <li>Hứa giáo dục con theo đạo</li>
+          <li>Bên ngoài Công giáo biết &amp; tôn trọng</li>
+        </ul>
+      </div>
+
+      <div class="cstep">
+        <div class="cstep-head">
+          <div class="cstep-num">04</div>
+          <svg class="cstep-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19V6l8-3 8 3v13"/><path d="M12 3v18"/><path d="M4 19h16"/><path d="M9 12h6"/></svg>
+        </div>
+        <h3 class="cstep-title">Học giáo lý hôn nhân</h3>
+        <div class="cstep-body">Khóa giáo lý ngắn cho đôi sắp cưới — thường 1–3 buổi tùy giáo xứ.</div>
+        <ul class="cstep-list">
+          <li>Cả hai cùng tham dự</li>
+          <li>Học về bí tích hôn nhân</li>
+          <li>Nhận giấy chứng nhận hoàn tất</li>
+        </ul>
+      </div>
+
+      <div class="cstep">
+        <div class="cstep-head">
+          <div class="cstep-num">05</div>
+          <svg class="cstep-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="6" width="16" height="14" rx="1"/><path d="M8 3v6M16 3v6M4 11h16"/></svg>
+        </div>
+        <h3 class="cstep-title">Xin phép chuẩn hôn</h3>
+        <div class="cstep-body">Cha xứ trình hồ sơ lên giáo phận để xin <em>phép chuẩn hôn khác đạo</em>. Khi duyệt mới được tổ chức tại nhà thờ.</div>
+        <ul class="cstep-list">
+          <li>Cha xứ trình giáo phận</li>
+          <li>Chờ duyệt — vài tuần</li>
+          <li>Nhận phép chuẩn → định ngày lễ</li>
+        </ul>
+      </div>
+
+      <div class="cstep">
+        <div class="cstep-head">
+          <div class="cstep-num">06</div>
+          <svg class="cstep-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7"/><path d="M12 3v3"/><path d="M10.5 4.5h3"/></svg>
+        </div>
+        <h3 class="cstep-title">Nghi thức Hôn phối</h3>
+        <div class="cstep-body">Khác đạo nên thường <em>không cử hành Thánh lễ đầy đủ</em> — chỉ làm Nghi thức Hôn phối, ngắn gọn ~30–45 phút.</div>
+        <ul class="cstep-list">
+          <li>Trao lời thề ước</li>
+          <li>Trao nhẫn cưới</li>
+          <li>Ký sổ hôn phối</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="catholic-side-note">
+      <div class="csn-key">
+        <div class="csn-key-label">Lưu ý mềm</div>
+        <div class="csn-key-title">Nếu cô dâu muốn theo đạo,<br>có thể cử hành Thánh lễ đầy đủ.</div>
+        <div class="csn-key-sub">Quyết định hoàn toàn tự nguyện. Mọi thủ tục chuẩn hôn khác đạo vẫn đảm bảo lễ cưới được Giáo hội công nhận.</div>
+      </div>
+      <div class="csn-val">
+        <div class="csn-val-label">Hai lựa chọn</div>
+        <div class="csn-val-title">Nghi thức Hôn phối (~30–45 phút) — <em>mặc định cho khác đạo</em></div>
+        <div class="csn-val-text">Hoặc Thánh lễ đầy đủ (~60–90 phút) nếu cô dâu rửa tội trước cưới.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== Locations ===================== -->
+<section class="sec locations" id="dia-diem">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-num"><em>03</em></div>
+      <div>
+        <span class="sec-eyebrow">Đồng Nai · Hai buổi tiệc</span>
+        <h2 class="sec-title">Hai địa điểm <em>tổ chức</em></h2>
+      </div>
+      <div class="sec-lede">Tổ chức tại quê hai bên gia đình. Không tổ chức tại TP.HCM để giữ không khí ấm cúng và tiết kiệm chi phí.</div>
+    </div>
+
+    <div class="loc-grid">
+
+      <div class="loc-cell">
+        <div class="loc-cell-head">
+          <div class="loc-cell-tag">Tiệc nhà trai</div>
+          <svg class="loc-cell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-7h6v7"/></svg>
+        </div>
+        <div class="loc-cell-name">Quê chú rể</div>
+        <div class="loc-cell-sub">Châu Nguyễn</div>
+        <div class="loc-cell-addr">
+          <strong>102, Quốc Lộ 20</strong>
+          Đồng Nai
+        </div>
+        <div class="loc-cell-stats">
+          <div>
+            <div class="loc-stat-label">Hình thức</div>
+            <div class="loc-stat-val">Tại nhà</div>
+          </div>
+          <div>
+            <div class="loc-stat-label">Số mâm</div>
+            <div class="loc-stat-val">8 — 10</div>
+          </div>
+          <div>
+            <div class="loc-stat-label">Khách</div>
+            <div class="loc-stat-val">~80</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc-cell">
+        <div class="loc-cell-head">
+          <div class="loc-cell-tag">Tiệc nhà gái</div>
+          <svg class="loc-cell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s-7-4-7-11a7 7 0 0114 0c0 7-7 11-7 11z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="loc-cell-name">Quê cô dâu</div>
+        <div class="loc-cell-sub">Nhâm Thị Loan</div>
+        <div class="loc-cell-addr">
+          <strong>Biên Hòa</strong>
+          Đồng Nai
+        </div>
+        <div class="loc-cell-stats">
+          <div>
+            <div class="loc-stat-label">Hình thức</div>
+            <div class="loc-stat-val">Nhà hàng</div>
+          </div>
+          <div>
+            <div class="loc-stat-label">Số mâm</div>
+            <div class="loc-stat-val">10 — 12</div>
+          </div>
+          <div>
+            <div class="loc-stat-label">Khách</div>
+            <div class="loc-stat-val">~100</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="loc-rule-note">
+      Hai bên gia đình thống nhất <strong>không tổ chức tại TP.HCM</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Budget ===================== -->
+<section class="sec budget" id="ngan-sach">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-num"><em>04</em></div>
+      <div>
+        <span class="sec-eyebrow">Tổng quan tài chính</span>
+        <h2 class="sec-title">Phân bổ <em>ngân sách</em></h2>
+      </div>
+      <div class="sec-lede">Mười một hạng mục cho lễ cưới ~150–200 khách, đã tính phần lễ Công giáo và 2 tiệc tại Đồng Nai.</div>
+    </div>
+
+    <div class="budget-hero">
+      <div class="budget-hero-cell is-main">
+        <div class="bh-label">Tổng dự kiến</div>
+        <div class="bh-val">300<sup>tr</sup></div>
+        <div class="bh-sub">~280 — 300 triệu đồng VND</div>
+      </div>
+      <div class="budget-hero-cell">
+        <div class="bh-label">Khách dự kiến</div>
+        <div class="bh-val">150 — 200</div>
+        <div class="bh-sub">15 — 20 bàn × 8–10 khách</div>
+      </div>
+      <div class="budget-hero-cell">
+        <div class="bh-label">Hạng mục</div>
+        <div class="bh-val">11</div>
+        <div class="bh-sub">Đã bao gồm 10–20tr dự phòng</div>
+      </div>
+    </div>
+
+    <div class="budget-table">
+      <div class="b-head">
+        <div class="num">№</div>
+        <div>Hạng mục</div>
+        <div class="range">Khoảng chi</div>
+        <div>Tỉ trọng</div>
+        <div class="pct">%</div>
+      </div>
+      <div id="budgetTable"></div>
+    </div>
+
+    <div class="budget-summary">
+      <div class="bs-cell">
+        <div class="bs-label">Tiệc cưới</div>
+        <div class="bs-val">~165<em>tr</em></div>
+        <div class="bs-pct">~55% tổng</div>
+      </div>
+      <div class="bs-cell">
+        <div class="bs-label">Lễ &amp; trang phục</div>
+        <div class="bs-val">~30<em>tr</em></div>
+        <div class="bs-pct">~10% tổng</div>
+      </div>
+      <div class="bs-cell">
+        <div class="bs-label">Trang trí + ảnh</div>
+        <div class="bs-val">~25<em>tr</em></div>
+        <div class="bs-pct">~8% tổng</div>
+      </div>
+      <div class="bs-cell">
+        <div class="bs-label">Nhẫn + dự phòng</div>
+        <div class="bs-val">~80<em>tr</em></div>
+        <div class="bs-pct">~27% tổng</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== Checklist ===================== -->
+<section class="sec checklist" id="checklist">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-num"><em>05</em></div>
+      <div>
+        <span class="sec-eyebrow">Tương tác · Lưu tự động</span>
+        <h2 class="sec-title">Checklist <em>siêu gọn</em></h2>
+      </div>
+      <div class="sec-lede">Tick những việc đã hoàn tất. Tiến độ được lưu trên trình duyệt — quay lại sau vẫn còn.</div>
+    </div>
+
+    <div class="cl-progress">
+      <div>
+        <div class="cl-prog-label">Tiến độ hoàn thành</div>
+        <span class="cl-prog-label-strong">Đường về lễ cưới</span>
+      </div>
+      <div class="cl-prog-bar">
+        <div class="cl-prog-fill" id="progressFill"></div>
+      </div>
+      <div class="cl-prog-count">
+        <div class="cl-prog-count-num"><span id="progressDone">0</span><em>/</em><span id="progressTotal">0</span></div>
+        <div class="cl-prog-count-of">Hoàn tất</div>
+      </div>
+    </div>
+
+    <div class="cl-grid" id="checklistGroups"></div>
+  </div>
+</section>
+
+<!-- ===================== Footer ===================== -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-mark">
+      <svg class="foot-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v20M5 8h14"/></svg>
+      <div class="foot-names">Châu <em>&amp;</em> Loan</div>
+      <div class="foot-quote">“Sự gì Thiên Chúa đã kết hợp, loài người không được phân ly.”<br>— Mt 19, 6</div>
+    </div>
+    <div class="foot-meta">
+      <span>Đồng Nai · Việt Nam</span>
+      <span class="foot-meta-mid">Phương án B · Hiện đại</span>
+      <span class="foot-meta-end"><a href="index.html">Xem phương án khác →</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ============= Budget ============= */
+  const BUDGET = [
+    { name: "Tiệc cưới (nhà hàng)", sub: "15–20 bàn × 3–4tr", range: "150 – 180tr", mid: 165, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9h18M5 9v11h14V9"/><path d="M8 9V5h8v4"/></svg>' },
+    { name: "Trang trí (nhà + tiệc)", sub: "Backdrop, hoa tươi, gallery", range: "10 – 20tr", mid: 15, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2c-3 4-3 8 0 10 3-2 3-6 0-10z"/><path d="M12 12v10"/><path d="M8 22h8"/></svg>' },
+    { name: "Nhẫn cưới", sub: "Vàng trắng / 18K", range: "8 – 20tr", mid: 14, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="14" r="6"/><path d="M9 6l3-3 3 3"/></svg>' },
+    { name: "Trang phục cưới", sub: "Váy + vest + áo dài", range: "8 – 15tr", mid: 11, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 3l3 3 3-3"/><path d="M9 3v4l-5 14h16l-5-14V3"/></svg>' },
+    { name: "Lễ ăn hỏi (tối giản)", sub: "3–5 mâm quả", range: "8 – 15tr", mid: 11, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="8" width="16" height="12"/><path d="M4 12h16M12 8v12"/><path d="M8 8V5l4-2 4 2v3"/></svg>' },
+    { name: "Chụp ảnh cưới", sub: "Gói studio ngoại cảnh", range: "6 – 12tr", mid: 9, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13" r="3.5"/></svg>' },
+    { name: "Makeup &amp; làm tóc", sub: "Cô dâu + mẹ 2 bên", range: "3 – 6tr", mid: 4.5, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="10" r="5"/><path d="M5 21c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/></svg>' },
+    { name: "Lễ nhà thờ + chuẩn hôn", sub: "Hồ sơ, giáo lý, lễ", range: "3 – 10tr", mid: 6.5, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 21V8l9-5 9 5v13"/><path d="M12 3v3M10.5 4.5h3"/><path d="M9 21v-7h6v7"/></svg>' },
+    { name: "Xe hoa", sub: "Xe 4–7 chỗ", range: "2 – 5tr", mid: 3.5, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 13l2-5h14l2 5v5H3z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>' },
+    { name: "Thiệp cưới", sub: "1.500–3.000đ × số khách", range: "1 – 3tr", mid: 2, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="6" width="18" height="13"/><path d="M3 7l9 7 9-7"/></svg>' },
+    { name: "Quà + phát sinh", sub: "Tip ekip, sửa đồ, dự phòng", range: "10 – 20tr", mid: 15, icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="9" width="18" height="11"/><path d="M3 9h18M12 9v11"/><path d="M8 9c-2-2 0-5 2-3s2 3 2 3M16 9c2-2 0-5-2-3s-2 3-2 3"/></svg>' },
+  ];
+
+  function renderBudget() {
+    const total = BUDGET.reduce((a, b) => a + b.mid, 0);
+    const max = Math.max(...BUDGET.map(b => b.mid));
+    const html = BUDGET.map((b, i) => {
+      const num = String(i + 1).padStart(2, '0');
+      const fill = (b.mid / max) * 100;
+      const realPct = (b.mid / total) * 100;
+      return `
+        <div class="b-row">
+          <div class="b-num">${num}</div>
+          <div class="b-name-wrap">
+            <div class="b-icon">${b.icon}</div>
+            <div>
+              <div class="b-name">${b.name}<span class="b-sub">${b.sub}</span></div>
+            </div>
+          </div>
+          <div class="b-range">${b.range}</div>
+          <div class="b-bar"><div class="b-bar-fill" style="width:${fill}%"></div></div>
+          <div class="b-pct">${realPct.toFixed(1)}<sup>%</sup></div>
+        </div>
+      `;
+    }).join('');
+    document.getElementById('budgetTable').innerHTML = html;
+  }
+  renderBudget();
+
+  /* ============= Checklist ============= */
+  const CHECKLIST = [
+    {
+      id: 'g_co_loi', title: 'Việc cốt lõi', sub: 'Nền tảng',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>',
+      items: [
+        { id: 'date', text: 'Chọn ngày cưới' },
+        { id: 'kethon', text: 'Đăng ký kết hôn tại UBND' },
+        { id: 'khach', text: 'Lập danh sách khách (~50–200)' },
+      ]
+    },
+    {
+      id: 'g_cong_giao', title: 'Công giáo', sub: 'Chuẩn hôn',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20M5 8h14"/></svg>',
+      items: [
+        { id: 'cha_xu', text: 'Liên hệ cha xứ chú rể tại Đồng Nai' },
+        { id: 'rua_toi', text: 'Chuẩn bị giấy Rửa tội (chú rể)' },
+        { id: 'them_suc', text: 'Chuẩn bị giấy Thêm sức (nếu có)' },
+        { id: 'doc_than', text: 'Giấy xác nhận độc thân — cả hai' },
+        { id: 'cam_ket', text: 'Ký cam kết giữ đức tin & giáo dục con' },
+        { id: 'giao_ly', text: 'Hoàn thành lớp giáo lý hôn nhân' },
+        { id: 'phep_chuan', text: 'Nhận phép chuẩn hôn từ giáo phận' },
+        { id: 'dat_le', text: 'Đặt lịch nghi thức tại nhà thờ' },
+      ]
+    },
+    {
+      id: 'g_dich_vu', title: 'Dịch vụ', sub: 'Cốt lõi',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13" r="3.5"/></svg>',
+      items: [
+        { id: 'nh_trai', text: 'Đặt tiệc nhà trai — 102 QL20' },
+        { id: 'nh_gai', text: 'Đặt nhà hàng tiệc nhà gái — Biên Hòa' },
+        { id: 'album', text: 'Đặt gói chụp album cưới' },
+        { id: 'combo', text: 'Combo váy + vest + makeup' },
+        { id: 'an_hoi', text: '3–5 mâm quả lễ ăn hỏi' },
+      ]
+    },
+    {
+      id: 'g_chi_tiet', title: 'Chi tiết cuối', sub: 'Tuần −2',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7l9 7 9-7"/><rect x="3" y="6" width="18" height="13"/></svg>',
+      items: [
+        { id: 'thiep', text: 'In thiệp / gửi thiệp online' },
+        { id: 'nhan', text: 'Mua nhẫn cưới' },
+        { id: 'xe_hoa', text: 'Đặt xe hoa' },
+        { id: 'trang_tri', text: 'Chốt trang trí backdrop' },
+        { id: 'mc', text: 'Brief MC kịch bản đơn giản' },
+        { id: 'ca_doan', text: 'Liên hệ ca đoàn (nếu có)' },
+      ]
+    },
+  ];
+
+  const STORAGE_KEY = 'wedding_modern_checklist_v1';
+
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { return {}; }
+  }
+  function saveState(s) { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+
+  function renderChecklist() {
+    const state = loadState();
+    const root = document.getElementById('checklistGroups');
+    let total = 0, done = 0;
+    root.innerHTML = CHECKLIST.map(g => {
+      const items = g.items.map(it => {
+        total++;
+        const checked = !!state[it.id];
+        if (checked) done++;
+        return `
+          <li class="cl-item ${checked ? 'is-checked' : ''}" data-id="${it.id}">
+            <div class="cl-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <div class="cl-text">${it.text}</div>
+          </li>
+        `;
+      }).join('');
+      const gd = g.items.filter(it => state[it.id]).length;
+      return `
+        <div class="cl-group">
+          <div class="cl-group-head">
+            <div class="cl-group-icon">${g.icon}</div>
+            <div class="cl-group-title">${g.title}<small>${g.sub}</small></div>
+            <div class="cl-group-count">${gd}/${g.items.length}</div>
+          </div>
+          <ul class="cl-items">${items}</ul>
+        </div>
+      `;
+    }).join('');
+
+    document.getElementById('progressDone').textContent = done;
+    document.getElementById('progressTotal').textContent = total;
+    document.getElementById('progressFill').style.width = total ? `${(done / total) * 100}%` : '0%';
+  }
+
+  document.addEventListener('click', (e) => {
+    const item = e.target.closest('.cl-item');
+    if (!item) return;
+    const id = item.dataset.id;
+    const state = loadState();
+    state[id] = !state[id];
+    saveState(state);
+    renderChecklist();
+  });
+
+  renderChecklist();
+</script>
+
+</body>
+</html>
